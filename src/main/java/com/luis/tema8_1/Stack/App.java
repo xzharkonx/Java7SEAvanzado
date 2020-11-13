@@ -123,7 +123,6 @@ public class App {
 			
 			// Mira como el último de la lista es el primero en ser atendido y se elimina de la lista.
 		}
-		System.out.println(pilaPersonas.empty());
 		
 	}
 
