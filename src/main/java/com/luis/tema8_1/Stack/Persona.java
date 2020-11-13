@@ -1,5 +1,8 @@
 package com.luis.tema8_1.Stack;
 
+// Está implementación de Comparable para la Clase persona
+// que estára dentro de una pila (Stack) no funcionara para
+// ordenar los elementos.
 public class Persona implements Comparable<Persona> {
 	
 	private int id;
@@ -29,6 +32,10 @@ public class Persona implements Comparable<Persona> {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
+	
+	// Está implementación de hashCode y equals para la Clase persona
+	// que estára dentro de una pila (Stack) no funcionara para
+	// filtrar los elementos que sean repetidos.
 	
 	@Override
 	public int hashCode() {
@@ -65,6 +72,10 @@ public class Persona implements Comparable<Persona> {
 	public String toString() {
 		return "Persona [id=" + id + ", nombre=" + nombre + ", edad=" + edad + "]";
 	}
+	
+	// Está implementación de Comparable y este método para la Clase persona
+	// que estára dentro de una pila (Stack) no funcionara para
+	// ordenar los elementos.
 	
 	@Override
 	public int compareTo(Persona per) {

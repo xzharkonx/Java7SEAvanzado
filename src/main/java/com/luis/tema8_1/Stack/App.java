@@ -40,7 +40,7 @@ public class App {
 		// Mientras que la pila no este vacia vamos a remover estos elementos en orden de atención.
 		// en este caso implementado LIFO.
 		
-		System.out.println("LIFO");
+		System.out.println("\nLIFO");
 		
 		while(!pila.empty()) {
 			
@@ -53,7 +53,7 @@ public class App {
 			// Mira como el último de la lista es el primero en ser atendido y se elimina de la lista.
 		}
 		
-		// Si la lista nos está vacia imprimira los elemenots.
+		// Si la lista nos está vacia imprimira los elementos.
 		if (!pila.empty()) {
 			System.out.println("Mostrando lista si hay elementos");
 			for (String elemento : pila) {
@@ -78,7 +78,7 @@ public class App {
 		// es decir, el elemento de hasta abajo que fue el primero que se añadio pero como será el último
 		// en salir tendrá la última posición de la pila, por lo tanto será no sera el primer valor si no el último
 		// y así sucesivamente.
-		// Si NO lo encuentra, este método me retornará un valor Negativo.
+		// Si NO lo encuentra, este método me retornará un valor Negativo -1.
 		System.out.println("Search: " + pila.search("1.- Luis Eduardo"));
 		System.out.println("Search: " + pila.search("2.- Luis"));
 		System.out.println("Search: " + pila.search("3.- Eduardo"));
@@ -96,7 +96,7 @@ public class App {
 		pilaPersonas.push(new Persona(4, "4.- Luis Eduardo", 27));
 		pilaPersonas.push(new Persona(3, "3.- Luis", 26));
 		pilaPersonas.push(new Persona(2, "2.- Eduardo", 28));
-		// Los elementos repetidos no son filtrados, es tratada normalemnte 
+		// Los elementos repetidos no son filtrados, es tratada normalmente 
 		// (ni aunque pongamos comparable en la Clase Persona).
 		// Lo importante es el orden de entrada y salida de los elementos.
 		pilaPersonas.push(new Persona(1, "1.- Impostor", 27));
@@ -108,7 +108,7 @@ public class App {
 		
 		System.out.println("\nÚltimo elemento: "+ pilaPersonas.peek());
 		// Necesitará de la implementación de los métodos equals y hashCode en la Clase Persona.
-		// Para que pueda comparar y buscar ese elemnto, si no, no lo encontrará.
+		// Para que pueda comparar y buscar ese elemento, si no, no lo encontrará.
 		System.out.println("Search: " + pilaPersonas.search(new Persona(1, "1.- Impostor", 27)));
 		
 		// Si la pila está vaciadará true por lo que cuando de true tendrémos que invertirlo a
