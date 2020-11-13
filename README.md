@@ -1,2 +1,2 @@
 # Java7SEAvanzado
-Códigos de JAVA
+Códigos de JAVA - Luis Eduardo Garcia Mercado.
