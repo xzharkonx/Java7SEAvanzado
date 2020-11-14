@@ -23,7 +23,6 @@ public class App {
 		System.out.println("Peek " + x);
 		
 		
-		
 		// Elimina primer elemento que se agrego.
 		x = dq.poll();
 		System.out.println("Poll " + x);		

@@ -2,7 +2,7 @@ package com.luis.tema8_3.Deque;
 
 //Está implementación de Comparable para la Clase persona
 //que estára dentro de una lista (Deque) no funcionara para
-//ordenar los elementos. 
+//ordenar los elementos.
 
 public class Persona{// implements Comparable<Persona>{
 
