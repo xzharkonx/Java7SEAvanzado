@@ -44,7 +44,7 @@ public class App {
 		
 		while(!pila.empty()) {
 			
-			// Para remover un elemento se utiliza el método pop()
+			// Para remover un elemento (el último que se agrego) se utiliza el método pop()
 			System.out.println("Atendiendo a: " + pila.pop());
 
 			// Vamos a dormir por un segundo por medio de un hilo para que el recorrido no sea muy rápido.
@@ -79,10 +79,10 @@ public class App {
 		// en salir tendrá la última posición de la pila, por lo tanto será no sera el primer valor si no el último
 		// y así sucesivamente.
 		// Si NO lo encuentra, este método me retornará un valor Negativo -1.
-		System.out.println("Search: " + pila.search("1.- Luis Eduardo"));
-		System.out.println("Search: " + pila.search("2.- Luis"));
-		System.out.println("Search: " + pila.search("3.- Eduardo"));
-		System.out.println("Search: " + pila.search("4.- Garcia Mercado"));
+		System.out.println("Search: " + pila.search("1.- Luis Eduardo") + " | 1.- Luis Eduardo");
+		System.out.println("Search: " + pila.search("2.- Luis") + " | 2.- Luis");
+		System.out.println("Search: " + pila.search("3.- Eduardo") + " | 3.- Eduardo");
+		System.out.println("Search: " + pila.search("4.- Garcia Mercado") + " | 4.- Garcia Mercado");
 		
 		System.out.println("Search: " + pila.search("5.- xxx"));
 		

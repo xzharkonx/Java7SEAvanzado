@@ -6,6 +6,7 @@ import java.util.Queue;
 public class App {
 
 	public static void main(String[] args) throws InterruptedException {
+		// FIFO.
 		// Para implementar el uso de Colas vamos a utilizar
 		// La Interfaz Queue con la implementación PriorityQueue<>()
 		// Para poder hacer el:  FIFO First In, First Out.
@@ -55,11 +56,24 @@ public class App {
 		
 		// Ahora trabajaremos con Objetos, será una Cola de Personas.
 		
+		// Pero para los objetos, debido a que es una implementación de prioridad necesitamos
+		// inidicarle si la prioridad va a ser de acuerdo a alguno de los atributos [id, nombre, edad]
+		// de la Clase Persona, por lo que necesitamos implementarle la interfaz Comparable<Persona>
+		// y sobreescribir su método copareTo(), y se acomparará por edades ( también puede ser por
+		// nombre o id).
+		
 		Queue<Persona> colaPersona = new PriorityQueue<>();
 		colaPersona.offer(new Persona(1, "Luis Eduardo", 27));
 		colaPersona.offer(new Persona(2, "Luis", 26));
 		colaPersona.offer(new Persona(3, "Eduardo", 28));
 		colaPersona.offer(new Persona(4, "Impostor", 7));
+		
+		System.out.println("\nRemoviendo\\Atendiendo Objetos\\Personas.");
+		while(!colaPersona.isEmpty()) {
+			
+			System.out.println("Atendiendo a: " + colaPersona.poll());
+			Thread.sleep(1000);
+		}
 		
 	}
 }
