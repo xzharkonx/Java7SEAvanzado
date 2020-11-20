@@ -11,9 +11,9 @@ public class App {
 
 	private Connection con = null;
 	
-	// Modificar con Statement
+	// Modificar con Statement.
 	public void modificarBatchStatement(Persona per) throws SQLException{
-		// Se captura el tiempo de inicio
+		// Se captura el tiempo de inicio.
 		long ini = System.currentTimeMillis();
 		
 		try {
@@ -21,7 +21,7 @@ public class App {
 			// es decir, cuando yo confirme todo se va a registrar y actualizar en la base de datos.
 			con.setAutoCommit(false);
 			
-			// Entonces aquí colocamos un for, hacemos pruebas con 20, 500, 5000 y 10000
+			// Entonces aquí colocamos un for, hacemos pruebas con 20, 500, 5000 y 10000.
 			for (int i = 0; i < 10000; i++) {
 				
 				Statement st = con.createStatement();

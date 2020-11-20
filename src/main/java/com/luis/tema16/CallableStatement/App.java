@@ -385,7 +385,7 @@ public class App {
 		//app.registrarCallableStatement(new Persona("Ing Luis Eduardo", "1234"));
 		// Si observamos el la base de datos veremos que efectivamente se a ingresado este dato.
 		
-		// Listamos los datos consultados desde el STORE PROCEDURE
+		// Listamos los datos consultados desde el STORE PROCEDURE.
 		// app.listarCallableStatement();
 		// Vemos que si nos consulto los nombres.
 		

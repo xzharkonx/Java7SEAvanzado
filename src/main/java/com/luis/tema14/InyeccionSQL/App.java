@@ -28,7 +28,7 @@ public class App {
 	        // version de la base de datos y anadirla en biblioteca
 	        // En nuestro caso añadimos la dependencia de postgresql en el archivo pom.xml
 	        
-	        // Hacemos la conexion
+	        // Hacemos la conexion.
 	        Class.forName(JDBC_DRIVER);
 			con = null;
 			con = DriverManager.getConnection(DB_URL, USER, PASS);

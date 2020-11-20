@@ -6,7 +6,7 @@ public class Persona implements Comparable<Persona> {
 	private String nombre;
 	private String pass;
 	
-	// No se añadio id.
+	// No se añadio id. 
 	public Persona(String nombre, String pass) {
 		super();
 		this.nombre = nombre;
