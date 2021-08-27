@@ -21,6 +21,7 @@ public class THilo  extends Thread{
 	// Para poder implementar la lógica de un Hilo debemos sobreescribir el método run()
 	
 	private int id;
+        
 	public THilo(int id) {
 		this.id = id;
 	}

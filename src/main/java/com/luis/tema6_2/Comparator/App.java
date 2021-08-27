@@ -64,6 +64,26 @@ public class App {
 			
 		});
 		
+                
+                // Ordenamiento directo de la lista
+                lista.sort(new Comparator<Persona>(){
+                    @Override
+                    public int compare(Persona p1, Persona p2) {
+                        if (p1.getEdad() > p2.getEdad()) {
+					
+					return 1;
+				}else if(p1.getEdad() < p2.getEdad()) {
+					
+					return -1;
+				}else {
+					
+					return 0;
+				}
+                    }
+                    
+                });
+                
+                
 		// Ahora solo mostraremos el nombre e id de cada elemento.
 		for (Persona persona : lista) {
 			System.out.println("Id: "+persona.getId()+" Nombre: "+persona.getNombre());

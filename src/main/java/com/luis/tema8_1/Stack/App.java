@@ -42,7 +42,7 @@ public class App {
 		
 		System.out.println("\nLIFO");
 		
-		while(!pila.empty()) {
+		while(!pila.isEmpty()) {
 			
 			// Para remover un elemento (el último que se agrego) se utiliza el método pop()
 			System.out.println("Atendiendo a: " + pila.pop());
@@ -54,7 +54,7 @@ public class App {
 		}
 		
 		// Si la lista nos está vacia imprimira los elementos.
-		if (!pila.empty()) {
+		if (!pila.isEmpty()) {
 			System.out.println("Mostrando lista si hay elementos");
 			for (String elemento : pila) {
 				System.out.println(elemento);
@@ -79,12 +79,12 @@ public class App {
 		// en salir tendrá la última posición de la pila, por lo tanto será no sera el primer valor si no el último
 		// y así sucesivamente.
 		// Si NO lo encuentra, este método me retornará un valor Negativo -1.
-		System.out.println("Search: " + pila.search("1.- Luis Eduardo") + " | 1.- Luis Eduardo");
-		System.out.println("Search: " + pila.search("2.- Luis") + " | 2.- Luis");
-		System.out.println("Search: " + pila.search("3.- Eduardo") + " | 3.- Eduardo");
-		System.out.println("Search: " + pila.search("4.- Garcia Mercado") + " | 4.- Garcia Mercado");
+		System.out.println("Search: " + pila.search("1.- Luis Eduardo") + " | 1.- Luis Eduardo"); // 4
+		System.out.println("Search: " + pila.search("2.- Luis") + " | 2.- Luis");// 3
+		System.out.println("Search: " + pila.search("3.- Eduardo") + " | 3.- Eduardo"); // 2
+		System.out.println("Search: " + pila.search("4.- Garcia Mercado") + " | 4.- Garcia Mercado"); // 1
 		
-		System.out.println("Search: " + pila.search("5.- xxx"));
+		System.out.println("Search: " + pila.search("5.- xxx")); // -1
 		
 		
 		System.out.println("\n----------Pila de objetos-------------");
@@ -113,7 +113,7 @@ public class App {
 		
 		// Si la pila está vaciadará true por lo que cuando de true tendrémos que invertirlo a
 		// false para que se rompa el while.
-		while(!pilaPersonas.empty()) {
+		while(!pilaPersonas.isEmpty()) {
 					
 			// Para remover un elemento se utiliza el método pop()
 			System.out.println("Atendiendo a: " + pilaPersonas.pop());

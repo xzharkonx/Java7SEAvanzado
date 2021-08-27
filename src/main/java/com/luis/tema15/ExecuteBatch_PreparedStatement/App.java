@@ -46,7 +46,9 @@ public class App {
 		System.out.println("Statement: "+ (fin-ini));
 	}
 
-	// Modificar con PreparedStatement
+	// # Modificar con PreparedStatement
+        // ? Este es mejor y con un ps.addBatch() aún más esto ayuda a 
+        // procesamientos masivos.
 	public void modificarBatchPreparedStatement(Persona per) throws SQLException{
 		// Se captura el tiempo de inicio
 		long ini = System.currentTimeMillis();
@@ -95,26 +97,25 @@ public class App {
 	public void conectar() {
 		try {
 			
-		    final String JDBC_DRIVER ="org.postgresql.Driver";//Para postgresql
+		final String JDBC_DRIVER ="org.postgresql.Driver";//Para postgresql
 	        // final String JDBC_DRIVER ="com.mysql.jdbc.Driver"; //Para Mysql
 		    
-	        final String DB_URL = "jdbc:postgresql://localhost:5432/dbtest";//Para postgresql
+	        final String DB_URL = "jdbc:postgresql://localhost:5432/dbtestjava";//Para postgresql
 	        // final String DB_URL = "jdbc:mysql://localhost:3306/ejemplo";//Para Mysql
 	        
 	        // base de datos credenciales
 	        final String USER = "estudiante";
-	        final String PASS = "zelda1234";
+	        final String PASS = "estudiante";
 	        
 	        // Definimos la conexion y la libreria: java.sql.Connection;
 	        // Recuerda descargar el conector o libreria de acuerdo a la
 	        // version de la base de datos y anadirla en biblioteca
 	        // En nuestro caso añadimos la dependencia de postgresql en el archivo pom.xml
 	        
-	        // Hacemos la conexion
+	        // # Hacemos la conexion
 	        Class.forName(JDBC_DRIVER);
-			con = null;
-			con = DriverManager.getConnection(DB_URL, USER, PASS);
-			System.out.println("Conexión exitosa");
+                con = DriverManager.getConnection(DB_URL, USER, PASS);
+                System.out.println("Conexión exitosa");
 			
 			
 		} catch(Exception e) {
@@ -196,7 +197,7 @@ public class App {
 		
 		app.conectar();
 		
-		boolean rpta = app.leerPreparedStatement(new Persona("Luis","admin1234"));
+		boolean rpta = app.leerPreparedStatement(new Persona("luis","luis1234"));
 		if(rpta) {
 			System.out.println("Verificación correcta, ingresando al sistema...");
 		}else {
@@ -264,9 +265,10 @@ public class App {
 		
 		appProbandoStatements.conectar();
 		System.out.println("Tiempos:\n");
-		appProbandoStatements.modificarBatchStatement(new Persona("Luis","admin1234"));
+                // Se comentaron porque actualizan todos los campos de la tabla.
+		// appProbandoStatements.modificarBatchStatement(new Persona("Luis","admin1234"));
 		System.out.println("\n**************************************\n");
-		appProbandoStatements.modificarBatchPreparedStatement(new Persona("Luis","admin1234"));
+		// appProbandoStatements.modificarBatchPreparedStatement(new Persona("Luis","admin1234"));
 		
 		appProbandoStatements.desconectar();
 		

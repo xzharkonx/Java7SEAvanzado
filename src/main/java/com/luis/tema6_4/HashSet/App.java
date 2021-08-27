@@ -6,15 +6,17 @@ import java.util.Set;
 public class App {
 
 	public static void main(String[] args) {
-		// La lista de tipo Set utilizando la interfaz HashSet
-		// no guardará un orden de agregación ni tampoco valores repetidos.
-		// (Es como una tupla).
-		// No se preocupa por el orden de adición.
+                
+                // Conjunto de Listas Set de tipo HashSet
+		// - La lista de tipo Set utilizando la interfaz HashSet
+		//   no guardará un orden de agregación ni tampoco valores repetidos.
+		//   (Es como una tupla).
+		// - No se preocupa por el orden de adición.
 		
 		Set<String> lista = new HashSet<>();
 		lista.add("Luis");
 		lista.add("Eduardo");
-		lista.add("Luis Eduardo");
+		lista.add("Luis Eduardo"); 
 		
 		for (String l : lista) {
 			System.out.println(l);
@@ -47,9 +49,12 @@ public class App {
 			System.out.println(per.getEdad()+"-"+per.getNombre());
 		}
 		
-		// Como le asociamos un equals para las variables nombre y edad, no interpretará como valores diferentes.
-		// Mira también como imprime Luis Eduardo ambas veces por que son diferentes de edad.
-		// Sin embargo los objetos de Luis no lo son, son iguales y por ello solo se muestran una vez.
+		// Como le asociamos un equals para las variables nombre y edad, 
+                // no interpretará como valores diferentes.
+		// Mira también como imprime Luis Eduardo ambas veces por que 
+                // son diferentes de edad.
+		// Sin embargo los objetos de Luis no lo son, son iguales y por 
+                // ello solo se muestran una vez.
 		
 
 	}

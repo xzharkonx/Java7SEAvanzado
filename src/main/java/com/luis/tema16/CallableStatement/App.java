@@ -17,12 +17,12 @@ public class App {
 		    final String JDBC_DRIVER ="org.postgresql.Driver"; // Para postgresql
 	        // final String JDBC_DRIVER ="com.mysql.jdbc.Driver"; // Para Mysql
 		    
-	        final String DB_URL = "jdbc:postgresql://localhost:5432/dbtest"; // Para postgresql
+	        final String DB_URL = "jdbc:postgresql://localhost:5432/dbtestjava"; // Para postgresql
 	        // final String DB_URL = "jdbc:mysql://localhost:3306/ejemplo"; // Para Mysql
 	        
 	        // base de datos credenciales
 	        final String USER = "estudiante";
-	        final String PASS = "zelda1234";
+	        final String PASS = "estudiante";
 	        
 	        // Definimos la conexion y la libreria: java.sql.Connection;
 	        // Recuerda descargar el conector o libreria de acuerdo a la
@@ -183,16 +183,30 @@ public class App {
 			// STORE PROCEDURE retorna 1 solo dato lo necesitamos para PostgreSQL.
 			ResultSet rs = cs.getResultSet();
 			
-			// Se ejecuta el método next() para indicarle que avance al primer valor que encontro y como solo
-			// devulve 1 se moverá a ese.
+			// Se ejecuta el método next() para indicarle que avance a la primera fila
+                        // de lo que encontro (si fueran muchos registros serían muchos rs.next()
+                        // para movernos de fila en fila) y como solo devulve 1 se moverá a ese.
+                        // Una sola fila, aun que si hay más nombres iguales, devolverá 1 columna
+                        // De puros ids.
+                        // Podemos revisar el la función o el procedimiento almacenado.
+                        // para revisar el contenido de una función almacenada en PostgreSQL
+                        // tenemos que (logueados desde la consola) indicar el siguiente comando:
+                        // - /sf nombre_funcion
 			rs.next();
-			
-			// Y con getInt(1) le pasamos el 1 para indicarle que es la primera posición y con esto habremos
-			// obtenido ese dato.
+                        
+                        // Entonces con rs.next() avanzamos una fila.
+                        
+			// Y con getInt(1) le pasamos el 1 para indicarle que es la primera posición 
+                        // y con esto habremos obtenido ese dato.
 			// rs.getInt(1);
 			// Mostramos el resultado.
 			System.out.println("El codigo obtenido de Salida es: " + rs.getInt(1));
-			
+			System.out.println("Posición de la Fila: " + rs.getRow());
+                        
+                        // Siempre nos va a traer una columna por como inimos nuestra función o 
+                        // procedimiento almacenado pero puede ser que se repita el nombre
+                        // y nos traiga muchas filas.
+                        
 			
 			cs.close();
 		} catch (Exception e) {
@@ -382,16 +396,16 @@ public class App {
 		
 		app.conectar();
 		
-		//app.registrarCallableStatement(new Persona("Ing Luis Eduardo", "1234"));
+		app.registrarCallableStatement(new Persona("Link", "zelda"));
 		// Si observamos el la base de datos veremos que efectivamente se a ingresado este dato.
 		
 		// Listamos los datos consultados desde el STORE PROCEDURE.
-		// app.listarCallableStatement();
+		app.listarCallableStatement();
 		// Vemos que si nos consulto los nombres.
 		
 		// Para que nos retorne un solo dato, en este caso el ID
-		// app.listarOutCallableStatement(new Persona("Ing Luis Eduardo", "1234"));
-		app.listarOutCallableStatement(new Persona("root", "root"));
+		app.listarOutCallableStatement(new Persona("luis", "luis1234"));
+		// app.listarOutCallableStatement(new Persona("luis", "luis1234"));
 		// app.listarOutCallableStatement(new Persona("Luis", "admin1234"));
 		
 		app.desconectar();

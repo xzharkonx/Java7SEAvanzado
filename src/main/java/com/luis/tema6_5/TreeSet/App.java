@@ -6,12 +6,15 @@ import java.util.TreeSet;
 public class App {
 
 	public static void main(String[] args) {
-		// Que nos fresce la implementación TreeSet
-		// Está implementación nos ofrece poder agregar elementos
-		// a la lista o a la colección que sean únicos, es decir,
-		// que no haya duplicados y a la vez te los ordena
-		// (únicos datos ordenados de forma ascendente).
-		// Más abajo se muestra como hacerlo de objetos.
+            
+                // Conjunto de Listas Set de tipo TreeSet
+                
+		// Que nos ofrece la implementación TreeSet
+		// - Está implementación nos ofrece poder agregar elementos
+		//   a la lista o a la colección que sean únicos, es decir,
+		//   que no haya duplicados 
+                // - Y a la vez te los ordena (únicos datos ordenados de forma ascendente).
+		//   Más abajo se muestra como hacerlo de objetos.
 		
 		Set<String> lista = new TreeSet<>();
 		lista.add("Luis");

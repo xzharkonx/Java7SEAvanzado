@@ -50,17 +50,22 @@ public class App {
 		List<String> listaNombres = new ArrayList<>();
 		listaNombres.add("Luis");
 		listaNombres.add("Eduardo");
-		listaNombres.add("Luis Eduardo");
+		listaNombres.add("Lina");
 		
 		System.out.println(listaNombres);
 		
-		//Ordenamos la lista de nombres.
+		// Ordenamos la lista de nombres.
 		Collections.sort(listaNombres);
 		
 		System.out.println(listaNombres);
 		
-		// Ahora ordenaremos objetos.
+                // Ordenamos la lista de nombres en orden inverso.
+		Collections.reverse(listaNombres);
 		
+		System.out.println(listaNombres);
+                
+		// Ahora ordenaremos objetos.
+		// ...
 		
 	}
 }

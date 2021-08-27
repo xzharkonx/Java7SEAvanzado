@@ -21,13 +21,20 @@ public class AppWild {
 	
 	//UnBounded: Es que no estamos indicando el tipo, es decir, vamos a esperar de un tipo
 	// object en común.
+    
+        // Hace referencia cualquier Clase que le enviemos, pero de nosotros
+        // depende el comportamiento, porque casteamos a la Clase Alumno y
+        // ira que le pasamos una lista de alumnos.
 	public void listarUnBounded(List<?> lista) {
 		for (Object a : lista) {
 			// Como lo reconoce como un objeto cualquiera tenemos que definir si es 
 			// alguna clase de la que tengamos conocimiento en este caso Alumno
-			if (a instanceof Alumno) // Se comprueba si pertenece a la clase para evitar el error: ClasCastException.
-				// Ahora forzosamente tendríamos que Castear el método de este objeto
-				// Para que pueda ser reconocido de que pertenece a la Clase Alumno.
+                        
+                        // Se comprueba si pertenece a la clase para evitar el error: ClasCastException.
+			// Ahora forzosamente tendríamos que Castear el método de este objeto
+			// Para que pueda ser reconocido de que pertenece a la Clase Alumno.
+			if (a instanceof Alumno) 
+                                
 				System.out.println(((Alumno)a).getNombre());
 			else
 				// Si no pues será de la Clase Profesor
@@ -40,16 +47,28 @@ public class AppWild {
 	// En este caso como la clase es Persona, todos los objetos que hereden de ella
 	// en este caso la Clase Alumno y la Clase Profesor heredan de ella. Es por eso que es Upper
 	// porque se toma algo superior.
+        
+        // Hace referencia a la Clase Profesor que hereda de Persona.
+        // Se le pasa una lista de objetos de tipo Profesor.
 	public void listarUpperBounded(List<? extends Persona> lista) {
 		for (Persona a : lista) {
 			// Observa que solo se imprime este método que está dentro de está clase.
+                        // No tiene necesidad de casteo a Profesor porque es un 
+                        // método de la Clase heredera principal.
 			System.out.println(a.getNombre());
 		}
 	}
 
 	// LowerBounded: La lista será de cualquier tipo que sea una super clase de la clase que estamos
 	// indicando aquí que es Alumno, es decir, las Clases que sean superiores a Alumno
-	// como en este caso lo es Object. Es por eso que es Lower porque se toma el menor.
+	// como en este caso lo es Object. Es por eso que es Lower porque se toma el menor.      
+        
+        // Hace referencia a la Clase heredera permirte a todos las Clases que
+        // hereden de esta misma Clase.
+        
+        // En este caso la Clase Alumno Hereda de Persona pero le pasamos una lista
+        // de Objetos de Tipo Alumno y Profesor Mezclados que Heredan de Persona.
+        // Solo detallamos la lógica para cada uno con un Casteo dentro del ciclo.
 	public void listarLowerBounded(List<? super Alumno> lista) {
 		for (Object  a : lista) {
 			if (a instanceof Alumno) {

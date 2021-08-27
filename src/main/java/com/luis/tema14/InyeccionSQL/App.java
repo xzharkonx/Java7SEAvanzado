@@ -16,12 +16,12 @@ public class App {
 		    final String JDBC_DRIVER ="org.postgresql.Driver";//Para postgresql
 	        // final String JDBC_DRIVER ="com.mysql.jdbc.Driver"; //Para Mysql
 		    
-	        final String DB_URL = "jdbc:postgresql://localhost:5432/dbtest";//Para postgresql
+	        final String DB_URL = "jdbc:postgresql://localhost:5432/dbtestjava";//Para postgresql
 	        // final String DB_URL = "jdbc:mysql://localhost:3306/ejemplo";//Para Mysql
 	        
 	        // base de datos credenciales
 	        final String USER = "estudiante";
-	        final String PASS = "zelda1234";
+	        final String PASS = "estudiante";
 	        
 	        // Definimos la conexion y la libreria: java.sql.Connection;
 	        // Recuerda descargar el conector o libreria de acuerdo a la
@@ -97,7 +97,7 @@ public class App {
 		
 		app.conectar();
 		
-		boolean rpta = app.leerStatement(new Persona("Luis","1234"));
+		boolean rpta = app.leerStatement(new Persona("luis","luis1234"));
 		if(rpta) {
 			System.out.println("Verificación correcta, ingresando al sistema...");
 		}else {
